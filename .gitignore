@@ -1,0 +1,107 @@
+# Build Results
+
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+artifacts/
+
+# Visual Studio
+
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+
+.idea/
+*.sln.iml
+
+# VS Code
+
+.vscode/
+
+# ReSharper
+
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Test Results
+
+TestResults/
+*.trx
+coverage/
+coverage-report/
+
+# NuGet
+
+*.nupkg
+*.snupkg
+packages/
+!packages/build/
+
+# ASP.NET Core
+
+appsettings.Development.json
+appsettings.Local.json
+
+# Secrets
+
+secrets.json
+.env
+.env.*
+!.env.example
+
+# Certificates
+
+*.pfx
+*.p12
+*.pem
+*.key
+
+# Publish Output
+
+publish/
+wwwroot/dist/
+
+# Node.js (if UI is added later)
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+
+# Docker
+
+docker-compose.override.yml
+
+# OS Files
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+
+*.log
+
+# Temporary Files
+
+*.tmp
+*.temp
+
+# BenchmarkDotNet
+
+BenchmarkDotNet.Artifacts/
+
+# Entity Framework
+
+Migrations/*.Designer.cs
+
+# Generated Files
+
+Generated/
