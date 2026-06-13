@@ -38,10 +38,13 @@ The project is currently focused on establishing the foundational capabilities r
 - PROJECT_CHARTER.md - Project goals and guiding principles
 - ROADMAP.md - Planned milestones and feature progression
 - docs/ - Additional technical and architectural documentation
+  - docs/V1_ARCHITECTURE.md - Version 1 architecture and diagrams
+  - docs/CONTRIBUTING.md - Branch naming and commit message conventions
 
 ## Contributing
 
 Contributions, feedback, and discussions are welcome as the project evolves.
+Please follow the branch naming and commit message conventions in docs/CONTRIBUTING.md.
 
 ## License
 

@@ -1,0 +1,15 @@
+flowchart LR
+    Learner["Learner / Admin User"]
+    WebApp["React Web App"]
+    Api[".NET Backend API"]
+    Db[("PostgreSQL")]
+    FileStore[("Course Package Storage")]
+    Player["SCORM Content Player"]
+
+    Learner --> WebApp
+    WebApp --> Api
+    Api --> Db
+    Api --> FileStore
+    WebApp --> Player
+    Player --> WebApp
+    WebApp --> Api
