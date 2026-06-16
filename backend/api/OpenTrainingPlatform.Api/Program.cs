@@ -1,17 +1,33 @@
-var builder = WebApplication.CreateBuilder(args);
+using OpenTrainingPlatform.Infrastructure;
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+try
 {
-    app.MapOpenApi();
+    var builder = WebApplication.CreateBuilder(args);
+
+    builder.Services.AddControllers();
+    builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddSwaggerGen();
+
+    builder.Services.AddInfrastructure(builder.Configuration);
+
+    var app = builder.Build();
+
+    app.UseSwagger();
+    app.UseSwaggerUI();
+
+    app.UseAuthentication();
+    app.UseAuthorization();
+    app.MapControllers();
+
+    //app.UseHttpsRedirection();
+
+    await app.RunAsync();
 }
-
-app.UseHttpsRedirection();
-
-app.Run();
+catch (Exception ex)
+{
+    Console.WriteLine($"An error occurred while starting the application: {ex.Message}");
+}
+finally
+{
+    Console.WriteLine("Application has stopped.");
+}

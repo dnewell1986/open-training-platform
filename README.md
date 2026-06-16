@@ -39,6 +39,7 @@ The project is currently focused on establishing the foundational capabilities r
 - ROADMAP.md - Planned milestones and feature progression
 - docs/ - Additional technical and architectural documentation
   - docs/V1_ARCHITECTURE.md - Version 1 architecture and diagrams
+  - docs/MILESTONE_1_COURSE_MANAGEMENT.md - Milestone 1 database schema and API design
   - docs/CONTRIBUTING.md - Branch naming and commit message conventions
 
 ## Contributing

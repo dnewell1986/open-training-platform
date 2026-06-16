@@ -1,6 +1,55 @@
-@OpenTrainingPlatform.Api_HostAddress = http://localhost:5223
+@host = http://localhost:5000
+@contentType = application/json
 
-GET {{OpenTrainingPlatform.Api_HostAddress}}/weatherforecast/
+### Variables
+@courseId = 
+
+###
+### POST: Upload a SCORM course package
+### Form fields:
+###   - package: SCORM zip file (required)
+###   - title: Display title (optional)
+###   - description: Course description (optional)
+POST {{host}}/api/courses
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="title"
+
+Workplace Safety Training
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="description"
+
+SCORM 1.2 compliant workplace safety course
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="package"; filename="course-package.zip"
+Content-Type: application/zip
+
+< ./sample-course.zip
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+### GET: List all courses with pagination
+### Query parameters:
+###   - status: Filter by status (uploaded, invalid, deleted) - optional
+###   - page: Page number (default: 1)
+###   - pageSize: Items per page (default: 25, max: 100)
+GET {{host}}/api/courses?page=1&pageSize=25
 Accept: application/json
 
 ###
+### GET: List courses by status
+GET {{host}}/api/courses?status=uploaded&page=1&pageSize=10
+Accept: application/json
+
+###
+### GET: Get course details by ID
+### Replace {courseId} with actual course ID from upload response
+GET {{host}}/api/courses/2f79c7de-1af6-49b8-96ef-f9efa6541146
+Accept: application/json
+
+###
+### DELETE: Delete a course
+### Removes the course metadata and uploaded package file
+DELETE {{host}}/api/courses/2f79c7de-1af6-49b8-96ef-f9efa6541146
+Accept: application/json

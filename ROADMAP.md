@@ -19,6 +19,10 @@ Demonstration:
 
 A user can upload a course and see it available within the platform.
 
+Design:
+
+- docs/MILESTONE_1_COURSE_MANAGEMENT.md
+
 ---
 
 # Milestone 2 - Launch Course
